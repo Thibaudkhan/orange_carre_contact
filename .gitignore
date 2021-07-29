@@ -1,0 +1,7 @@
+
+form_contact/.idea/
+
+form_contact/var/cache/dev/
+form_contact/vendor/
+form_contact/var/logs/*
+form_contact/var/sessions/*
