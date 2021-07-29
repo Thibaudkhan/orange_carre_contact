@@ -1,5 +1,5 @@
 # Orange_carre_contact #
-Symfony
+
 
 ##Before the installation ##
 <p> Check the .env file, you need to write your user and password for mysql connection.</p>
