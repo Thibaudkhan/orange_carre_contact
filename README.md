@@ -1,22 +1,22 @@
-# Orange_carre_contact
+# Orange_carre_contact #
 Symfony
 
-##Before the installation
+##Before the installation ##
 <p> Check the .env file, you need to write your user and password for mysql connection.</p>
 <p> Check the .env file, you need to write your mail and password for mailer DSN</p>
 <p>Clone the project and use the development branch </p>
 
-##Command to install the project
+##Command to install the project ##
 
-* ``php composer.phar update``
+* ``composer install``
 * ``php bin/console doctrine:database:create``
 
 
-##Install manually dependencies 
+##Install manually dependencies ##
 * ``composer require symfony/mailer``
 * ``composer require symfony/orm-pack``
 * ``composer require --dev symfony/maker-bundle``
 
 
-##Run the server 
+##Run the server ##
 * ``symfony server:start``
