@@ -41,9 +41,7 @@ class ContactController extends AbstractController
                 return $this->redirectToRoute('contact');
             }
             catch(\Exception $e){
-                $this->addFlash('error', 'Your message can\'t be send');
-
-                print_r($e->getMessage());
+                $this->addFlash('error', 'Your message can\'t be send : '.$e->getMessage());
                 error_log($e->getMessage());
             }
 
