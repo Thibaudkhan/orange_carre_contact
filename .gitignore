@@ -5,3 +5,54 @@ form_contact/var/cache/dev/
 form_contact/vendor/
 form_contact/var/logs/*
 form_contact/var/sessions/*
+
+
+!form_contact/app/cache/.gitkeep
+!form_contact/app/logs/.gitkeep
+
+# Email spool folder
+form_contact/app/spool/*
+
+# Cache, session files and logs (Symfony3)
+form_contact/var/cache/*
+form_contact/var/logs/*
+form_contact/var/sessions/*
+!form_contact/var/cache/.gitkeep
+!form_contact/var/logs/.gitkeep
+!form_contact/var/sessions/.gitkeep
+
+# Logs (Symfony4)
+form_contact/var/log/*
+!form_contact/var/log/.gitkeep
+
+# Parameters
+form_contact/app/config/parameters.yml
+form_contact/app/config/parameters.ini
+
+# Managed by Composer
+form_contact/app/bootstrap.php.cache
+form_contact/var/bootstrap.php.cache
+form_contact/bin/*
+!form_contact/bin/console
+!form_contact/bin/symfony_requirements
+form_contact/vendor/
+
+# Assets and user uploads
+form_contact/web/bundles/
+form_contact/web/uploads/
+
+# PHPUnit
+form_contact/app/phpunit.xml
+form_contact/phpunit.xml
+
+# Build data
+form_contact/build/
+
+# Composer PHAR
+form_contact/composer.phar
+
+# Backup entities generated with doctrine:generate:entities command
+**form_contact/Entity/*~
+
+# Embedded web-server pid file
+form_contact/.web-server-pid
