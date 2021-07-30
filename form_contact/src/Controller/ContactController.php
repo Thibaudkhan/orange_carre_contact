@@ -44,7 +44,7 @@ EOT;
             try{
                 $mailer->send($message);
                 $this->addFlash('success', 'Your message has been sent');
-                // self::createProduct($contactFormData); envoie de mail impossile donc pas d'insert pour le test je mets après
+                // self::createProduct($contactFormData); envoie de mail impossile donc pas d'insert pour le test je mets après le try catch même si normalement non
                 //return $this->redirectToRoute('contact');
             }
             catch(\Exception $e){

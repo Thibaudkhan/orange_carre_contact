@@ -1,7 +1,7 @@
 # Orange_carre_contact #
 
 ************
-Symfony Project
+Symfony Project : Form Contact
 ************
 
 ## Before the installation ##
