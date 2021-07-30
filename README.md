@@ -5,9 +5,9 @@ Symfony Project : Form Contact
 ************
 
 ## Before the installation ##
+<p>Clone the project using main branch and change the branch to v1</p>
 <p> Check the .env file, you need to write your user and password for mysql connection.</p>
 <p> Check the .env file, you need to write your mail and password for mailer DSN</p>
-<p>Clone the project and use the development branch </p>
 
 ************
 
