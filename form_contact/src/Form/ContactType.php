@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -15,10 +16,23 @@ class ContactType extends AbstractType
     {
         $builder
             ->add('fullName',TextType::class, [
-                'label' => 'Name',
+                'label' => 'Full name',
             ])
             ->add('email',EmailType::class, [
                 'label' => 'E-mail'
+            ])
+            ->add('phone',TextType::class, [
+                'label' => 'Phone',
+            ])
+            ->add('subject',TextType::class, [
+                'label' => 'Subject',
+            ])
+            ->add('reason',ChoiceType::class, [
+                'choices'=>[
+                    'Contact'=> 'contact',
+                    'Issue'=> 'issue',
+                    'Other'=> 'other',
+                ]
             ])
             ->add('message', TextareaType::class, [
                 'attr' => ['rows' => 5],
@@ -26,10 +40,5 @@ class ContactType extends AbstractType
         ;
     }
 
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefaults([
-            // Configure your form options here
-        ]);
-    }
+
 }
