@@ -39,7 +39,7 @@ EOT;
                 ->subject($contactFormData['subject'])
                 ->text($contactFormData['message'],
                     'text/plain');
-            print_r($message);
+            //print_r($message);
 
             try{
                 $mailer->send($message);
@@ -61,25 +61,38 @@ EOT;
 
     private function createProduct($contactFormData): Response
     {
+        $returnMessage="";
+        try {
+            $entityManager = $this->getDoctrine()->getManager();
+
+            $product = new Contact();
+            $product->setName($contactFormData['fullName']);
+            $product->setPhone($contactFormData['phone']);
+            $product->setEmail($contactFormData['email']);
+            $product->setSubject($contactFormData['subject']);
+            $product->setMessage($contactFormData['message']);
+            $product->setCreatedAt(new \DateTimeImmutable());
+
+            // tell Doctrine you want to (eventually) save the Product (no queries yet)
+            $entityManager->persist($product);
+
+            // actually executes the queries (i.e. the INSERT query)
+            $entityManager->flush();
+
+        }
+        catch(DBALException $e){
+            $returnMessage = $e->getMessage();
+        }
+        catch(\Exception $e){
+            $returnMessage = $e->getMessage();
+        }
+        $returnMessage = $returnMessage == "" ? 'Saved new product with id '.$product->getId() : 'Cannot save '.$returnMessage;
+        return  new Response($returnMessage);
+
         // you can fetch the EntityManager via $this->getDoctrine()
         // or you can add an argument to the action: createProduct(EntityManagerInterface $entityManager)
-        $entityManager = $this->getDoctrine()->getManager();
 
-        $product = new Contact();
-        $product->setName($contactFormData['fullName']);
-        $product->setPhone($contactFormData['phone']);
-        $product->setEmail($contactFormData['email']);
-        $product->setSubject($contactFormData['subject']);
-        $product->setMessage($contactFormData['message']);
-        $product->setCreatedAt(new \DateTimeImmutable());
 
-        // tell Doctrine you want to (eventually) save the Product (no queries yet)
-        $entityManager->persist($product);
-
-        // actually executes the queries (i.e. the INSERT query)
-        $entityManager->flush();
-
-        return new Response('Saved new product with id '.$product->getId());
     }
 
 }

@@ -13,23 +13,10 @@ Symfony Project
 
 ## Command to install the project ##
 
+##### Install dependencies #####
 * ``composer install``
-* ``php bin/console doctrine:database:create``
-
-************
-
-## Install manually dependencies ##
-* ``composer require symfony/mailer``
-* ``composer require symfony/orm-pack``
-* ``composer require --dev symfony/maker-bundle``
-
-************
-
-## Command to create the project ##
-
 ##### Create the database : #####
 * ``php bin/console doctrine:database:create``
-
 ##### Create the table : #####
 * ``php bin/console make:entity``
  
@@ -38,6 +25,14 @@ Symfony Project
 
 ##### Migrate if previous command succeed : #####
 * ``  php bin/console doctrine:migrations:migrate`` 
+
+
+************
+
+## Install manually dependencies ##
+* ``composer require symfony/mailer``
+* ``composer require symfony/orm-pack``
+* ``composer require --dev symfony/maker-bundle``
 
 ************
 
