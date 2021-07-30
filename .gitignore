@@ -57,3 +57,6 @@ form_contact/composer.phar
 
 # Embedded web-server pid file
 form_contact/.web-server-pid
+.idea/
+
+form_contact/migrations/

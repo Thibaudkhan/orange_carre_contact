@@ -20,3 +20,17 @@
 
 ## Run the server ##
 * ``symfony server:start``
+
+## Command to create the project ##
+
+##### Create the database : #####
+* ``php bin/console doctrine:database:create``
+
+##### Create the table : #####
+* ``php bin/console make:entity``
+ 
+##### Prepare the migration : #####
+* `` php bin/console make:migration`` 
+
+##### Migrate if previous command succeed : #####
+* ``  php bin/console doctrine:migrations:migrate`` 
